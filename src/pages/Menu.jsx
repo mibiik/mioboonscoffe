@@ -105,7 +105,15 @@ export default function Menu() {
   const [activeCategory, setActiveCategory] = useState('desserts');
   const [expandedCategories, setExpandedCategories] = useState(categories.map(cat => cat.id));
   const [menuData, setMenuData] = useState(menuItems);
+  const [expandedItems, setExpandedItems] = useState({});
   const menuRef = useRef(null);
+
+  const toggleItemExpansion = (categoryId, itemIndex) => {
+    setExpandedItems(prev => ({
+      ...prev,
+      [`${categoryId}-${itemIndex}`]: !prev[`${categoryId}-${itemIndex}`]
+    }));
+  };
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -163,30 +171,51 @@ export default function Menu() {
                 <h2 className="text-2xl font-light text-gray-800">{category.name}</h2>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              <div className="flex flex-col space-y-4">
                 {menuData[category.id].map((item, index) => (
                   <motion.div
                     key={`${category.id}-${index}`}
                     variants={fadeInUp}
-                    className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                    className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
                   >
-                    <div className="aspect-square overflow-hidden bg-gray-100">
-                      <img
-                        src={item.image || defaultProductImage}
-                        alt={item.name}
-                        className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
-                        onError={(e) => e.target.src = defaultProductImage}
-                      />
-                    </div>
-                    <div className="p-3 sm:p-4">
-                      <div className="space-y-1 sm:space-y-2">
-                        <h3 className="text-base sm:text-lg font-medium text-gray-900 line-clamp-1">{item.name}</h3>
-                        <p className="text-xs sm:text-sm text-gray-500 leading-relaxed line-clamp-2">{item.description}</p>
-                        <div className="pt-1 sm:pt-2">
-                          <span className="text-base sm:text-lg font-bold text-emerald-600">{item.price} ₺</span>
-                        </div>
+                    <div 
+                      className="p-4 cursor-pointer flex justify-between items-center"
+                      onClick={() => toggleItemExpansion(category.id, index)}
+                    >
+                      <div className="space-y-1">
+                        <h3 className="text-lg font-medium text-gray-900">{item.name}</h3>
+                        <p className="text-sm text-gray-500">{item.description}</p>
+                        <span className="text-lg font-bold text-emerald-600">{item.price} ₺</span>
                       </div>
+                      <motion.div
+                        animate={{ rotate: expandedItems[`${category.id}-${index}`] ? 180 : 0 }}
+                        className="text-gray-400"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </motion.div>
                     </div>
+                    <AnimatePresence>
+                      {expandedItems[`${category.id}-${index}`] && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="border-t border-gray-100"
+                        >
+                          <div className="aspect-video overflow-hidden bg-gray-100">
+                            <img
+                              src={item.image || defaultProductImage}
+                              alt={item.name}
+                              className="w-full h-full object-cover"
+                              onError={(e) => e.target.src = defaultProductImage}
+                            />
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </motion.div>
                 ))}
               </div>
