@@ -7,7 +7,7 @@ import AdminLogin from './components/AdminLogin';
 import NewNavbar from './components/NewNavbar';
 import Footer from './components/Footer';
 import { navigationIcons } from './components/Icons';
-import logo from './assets/logo.svg';
+import logo from './assets/logos.svg';
 
 // Import pages
 import Home from './pages/Home';
