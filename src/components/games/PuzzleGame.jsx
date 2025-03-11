@@ -240,7 +240,13 @@ export default function PuzzleGame() {
       
       <div className="flex justify-center">
         <div 
-          className="relative bg-gray-100 rounded-xl overflow-hidden w-full max-w-[400px] aspect-square"
+          className="relative bg-gray-100 rounded-xl overflow-hidden"
+          style={{ 
+            width: `${PUZZLE_CONTAINER_SIZE}px`, 
+            height: `${PUZZLE_CONTAINER_SIZE}px`,
+            maxWidth: '100%',
+            aspectRatio: '1/1'
+          }}
         >
           {!gameStarted ? (
             <div className="absolute inset-0 flex items-center justify-center">
@@ -259,19 +265,16 @@ export default function PuzzleGame() {
                 key={piece.id}
                 className={`absolute cursor-pointer ${piece.isEmpty ? 'bg-gray-200' : 'bg-white shadow-md'} ${showHint && generateHint()?.id === piece.id ? 'ring-4 ring-yellow-400 ring-opacity-75' : ''}`}
                 style={{
-                  width: `${100 / GRID_SIZE}%`,
-                  height: `${100 / GRID_SIZE}%`,
-                  x: `${(piece.col * 100) / GRID_SIZE}%`,
-                  y: `${(piece.row * 100) / GRID_SIZE}%`,
+                  width: piece.width,
+                  height: piece.height,
+                  x: piece.x,
+                  y: piece.y,
                   backgroundImage: piece.isEmpty ? 'none' : `url(${selectedImage.image})`,
-                  backgroundSize: '400% 400%',
-                  backgroundPosition: `${-(piece.col * 100) / (GRID_SIZE - 1)}% ${-(piece.row * 100) / (GRID_SIZE - 1)}%`,
+                  backgroundSize: `${PUZZLE_CONTAINER_SIZE}px ${PUZZLE_CONTAINER_SIZE}px`,
+                  backgroundPosition: piece.backgroundPosition,
                   zIndex: piece.isEmpty ? 0 : 1,
                 }}
-                animate={{ 
-                  x: `${(piece.col * 100) / GRID_SIZE}%`, 
-                  y: `${(piece.row * 100) / GRID_SIZE}%` 
-                }}
+                animate={{ x: piece.x, y: piece.y }}
                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                 onClick={() => handlePieceClick(piece)}
                 whileHover={{ scale: !piece.isEmpty && !solved ? 1.02 : 1 }}

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeIn, fadeInUp, staggerContainer } from '../animations';
+import { updateMenuImages } from '../utils/imageService';
 
 // Import SVG images for menu categories
 import cakeSvg from '../assets/cake.svg';
@@ -26,6 +27,7 @@ import drinkImage from '../assets/menu/drinks/placeholder.jpg';
 import kruvasanImage from '../assets/menu/desserts/desserts-kruvasan.jpg';
 import brownieImage from '../assets/menu/desserts/desserts-brownie.jpg';
 import elmaliKurabiyeImage from '../assets/menu/desserts/desserts-elmalı-kurabiye.jpg';
+import makaronImage from '../assets/menu/desserts/desserts-makaron.jpg';
 
 const menuItems = {
   'desserts': [
@@ -39,7 +41,7 @@ const menuItems = {
     { name: 'Kutu Kurabiye', description: 'Çeşitli kurabiyelerden oluşan kutu', price: 225, image: defaultProductImage },
     { name: 'Ginger Bread', description: 'Geleneksel zencefilli kurabiye', price: 75, image: defaultProductImage },
     { name: 'Elmalı Kurabiye', description: 'Taze elma parçacıklı kurabiye', price: 55, image: elmaliKurabiyeImage },
-    { name: 'Makaron', description: 'Fransız tarzı renkli makaron', price: 55, image: defaultProductImage },
+    { name: 'Makaron', description: 'Fransız tarzı renkli makaron', price: 55, image: makaronImage },
     { name: 'Tuzlu Kurabiye', description: 'Özel malzemelerle hazırlanan lüks kurabiye', price: 35, image: defaultProductImage },
   ],
   'main-dishes': [
@@ -102,7 +104,16 @@ const menuItems = {
 export default function Menu() {
   const [activeCategory, setActiveCategory] = useState('desserts');
   const [expandedCategories, setExpandedCategories] = useState(categories.map(cat => cat.id));
+  const [menuData, setMenuData] = useState(menuItems);
   const menuRef = useRef(null);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      const updatedMenuItems = await updateMenuImages(menuItems);
+      setMenuData(updatedMenuItems);
+    };
+    fetchImages();
+  }, []);
 
   const scrollToCategory = (categoryId) => {
     setActiveCategory(categoryId);
@@ -152,8 +163,8 @@ export default function Menu() {
                 <h2 className="text-2xl font-light text-gray-800">{category.name}</h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {menuItems[category.id].map((item, index) => (
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                {menuData[category.id].map((item, index) => (
                   <motion.div
                     key={`${category.id}-${index}`}
                     variants={fadeInUp}
@@ -167,12 +178,12 @@ export default function Menu() {
                         onError={(e) => e.target.src = defaultProductImage}
                       />
                     </div>
-                    <div className="p-4">
-                      <div className="space-y-2">
-                        <h3 className="text-lg font-medium text-gray-900 line-clamp-1">{item.name}</h3>
-                        <p className="text-sm text-gray-500 leading-relaxed line-clamp-2">{item.description}</p>
-                        <div className="pt-2">
-                          <span className="text-lg font-bold text-emerald-600">{item.price} ₺</span>
+                    <div className="p-3 sm:p-4">
+                      <div className="space-y-1 sm:space-y-2">
+                        <h3 className="text-base sm:text-lg font-medium text-gray-900 line-clamp-1">{item.name}</h3>
+                        <p className="text-xs sm:text-sm text-gray-500 leading-relaxed line-clamp-2">{item.description}</p>
+                        <div className="pt-1 sm:pt-2">
+                          <span className="text-base sm:text-lg font-bold text-emerald-600">{item.price} ₺</span>
                         </div>
                       </div>
                     </div>
