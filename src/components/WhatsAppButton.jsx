@@ -39,8 +39,8 @@ export default function WhatsAppButton() {
         >
           <span className="text-white font-medium text-sm sm:text-base">Bize Yaz</span>
         </motion.div>
-        <div className="p-3.5 sm:p-4 aspect-square">
-          <FaWhatsapp className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+        <div className="p-3 sm:p-3.5 aspect-square rounded-full">
+          <FaWhatsapp className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
         </div>
       </div>
     </motion.a>
