@@ -1,0 +1,3 @@
+This directory will contain dessert product images.
+Image naming format: desserts-{product-name}.{extension}
+Example: desserts-badem-unlu-kek.jpg

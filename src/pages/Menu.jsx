@@ -19,75 +19,83 @@ const categories = [
 ];
 
 // Menu items data
+// Import product images
+import defaultProductImage from '../assets/menu/desserts/placeholder.jpg';
+import mainDishImage from '../assets/menu/main-dishes/placeholder.jpg';
+import drinkImage from '../assets/menu/drinks/placeholder.jpg';
+import kruvasanImage from '../assets/menu/desserts/desserts-kruvasan.jpg';
+import brownieImage from '../assets/menu/desserts/desserts-brownie.jpg';
+import elmaliKurabiyeImage from '../assets/menu/desserts/desserts-elmalı-kurabiye.jpg';
+
 const menuItems = {
   'desserts': [
-    { name: 'Badem unlu kek', description: 'Özel tarifimizle hazırlanan badem unlu kek', price: 185 },
-    { name: 'Cookie Brownie', description: 'Çikolata parçacıklı cookie brownie', price: 225 },
-    { name: 'Cup Cake', description: 'Günlük taze hazırlanan cup cake', price: 130 },
-    { name: 'Islak Kek', description: 'Çikolata soslu ıslak kek', price: 150 },
-    { name: 'Cheesecake', description: 'Kremsi ve lezzetli cheesecake', price: 220 },
-    { name: 'Brownie', description: 'Sıcak servis edilen çikolatalı brownie', price: 175 },
-    { name: 'Starbucks Kurabiye', description: 'Starbucks tarzı özel kurabiye', price: 140 },
-    { name: 'Kutu Kurabiye', description: 'Çeşitli kurabiyelerden oluşan kutu', price: 225 },
-    { name: 'Ginger Bread', description: 'Geleneksel zencefilli kurabiye', price: 75 },
-    { name: 'Elmalı Kurabiye', description: 'Taze elma parçacıklı kurabiye', price: 55 },
-    { name: 'Makaron', description: 'Fransız tarzı renkli makaron', price: 55 },
-    { name: 'Tuzlu Kurabiye', description: 'Özel malzemelerle hazırlanan lüks kurabiye', price: 35 },
+    { name: 'Badem unlu kek', description: 'Özel tarifimizle hazırlanan badem unlu kek', price: 185, image: defaultProductImage },
+    { name: 'Cookie Brownie', description: 'Çikolata parçacıklı cookie brownie', price: 225, image: defaultProductImage },
+    { name: 'Cup Cake', description: 'Günlük taze hazırlanan cup cake', price: 130, image: defaultProductImage },
+    { name: 'Islak Kek', description: 'Çikolata soslu ıslak kek', price: 150, image: defaultProductImage },
+    { name: 'Cheesecake', description: 'Kremsi ve lezzetli cheesecake', price: 220, image: defaultProductImage },
+    { name: 'Brownie', description: 'Sıcak servis edilen çikolatalı brownie', price: 175, image: brownieImage },
+    { name: 'Starbucks Kurabiye', description: 'Starbucks tarzı özel kurabiye', price: 140, image: defaultProductImage },
+    { name: 'Kutu Kurabiye', description: 'Çeşitli kurabiyelerden oluşan kutu', price: 225, image: defaultProductImage },
+    { name: 'Ginger Bread', description: 'Geleneksel zencefilli kurabiye', price: 75, image: defaultProductImage },
+    { name: 'Elmalı Kurabiye', description: 'Taze elma parçacıklı kurabiye', price: 55, image: elmaliKurabiyeImage },
+    { name: 'Makaron', description: 'Fransız tarzı renkli makaron', price: 55, image: defaultProductImage },
+    { name: 'Tuzlu Kurabiye', description: 'Özel malzemelerle hazırlanan lüks kurabiye', price: 35, image: defaultProductImage },
   ],
   'main-dishes': [
-    { name: 'Çıtır Tavuk', description: 'Çıtır kaplamalı tavuk, yanında patates kızartması ile', price: 350 },
-    { name: 'Çocuk Pizza', description: 'Çocuklar için özel hazırlanan mini pizza', price: 300 },
-    { name: 'Pizza', description: 'İtalyan usulü hazırlanan pizza', price: 475 },
-    { name: 'Hamburger', description: 'Ev yapımı hamburger, yanında patates kızartması ile', price: 475 },
-    { name: 'Köfte Salata', description: 'Izgara köfte ile taze mevsim salatası', price: 470 },
-    { name: 'Köfte Makarna', description: 'Izgara köfte ile makarna', price: 470 },
-    { name: 'Mantı', description: 'El açması mantı, yoğurt ve sos ile', price: 350 },
-    { name: 'Schnitzel Salata', description: 'Tavuk schnitzel ile taze mevsim salatası', price: 425 },
-    { name: 'Soslu Makarna', description: 'Seçiminize göre pesto veya domates soslu makarna', price: 350 },
-    { name: 'Falafel Salata', description: 'Nohut köftesi ile taze mevsim salatası', price: 350 },
+    { name: 'Çıtır Tavuk', description: 'Çıtır kaplamalı tavuk, yanında patates kızartması ile', price: 350, image: mainDishImage },
+    { name: 'Çocuk Pizza', description: 'Çocuklar için özel hazırlanan mini pizza', price: 300, image: mainDishImage },
+    { name: 'Pizza', description: 'İtalyan usulü hazırlanan pizza', price: 475, image: mainDishImage },
+    { name: 'Hamburger', description: 'Ev yapımı hamburger, yanında patates kızartması ile', price: 475, image: mainDishImage },
+    { name: 'Köfte Salata', description: 'Izgara köfte ile taze mevsim salatası', price: 470, image: mainDishImage },
+    { name: 'Köfte Makarna', description: 'Izgara köfte ile makarna', price: 470, image: mainDishImage },
+    { name: 'Mantı', description: 'El açması mantı, yoğurt ve sos ile', price: 350, image: mainDishImage },
+    { name: 'Schnitzel Salata', description: 'Tavuk schnitzel ile taze mevsim salatası', price: 425, image: mainDishImage },
+    { name: 'Soslu Makarna', description: 'Seçiminize göre pesto veya domates soslu makarna', price: 350, image: mainDishImage },
+    { name: 'Falafel Salata', description: 'Nohut köftesi ile taze mevsim salatası', price: 350, image: mainDishImage },
   ],
   'breakfast': [
-    { name: 'Serpme Kahvaltı', description: 'Zengin içerikli serpme kahvaltı tabağı', price: 750 },
-    { name: 'Mio Tost', description: 'Özel malzemelerle hazırlanan Mio tost', price: 225 },
+    { name: 'Serpme Kahvaltı', description: 'Zengin içerikli serpme kahvaltı tabağı', price: 750, image: mainDishImage },
+    { name: 'Mio Tost', description: 'Özel malzemelerle hazırlanan Mio tost', price: 225, image: mainDishImage },
   ],
   'drinks': [ 
-    { name: 'Sıkma Meyve Suyu', description: 'Taze sıkılmış mevsim meyveleri', price: 225 },
-    { name: 'Kutu Meyve Suyu', description: 'Çeşitli meyve suları', price: 45 },
-    { name: 'Nesquik Süt', description: 'Çikolatalı süt', price: 45 },
-    { name: 'Limonata', description: 'Ev yapımı taze limonata', price: 140 },
-    { name: 'Ayran', description: 'Ev yapımı ayran', price: 90 },
-    { name: 'Soda', description: 'Sade veya meyveli soda', price: 90 },
-    { name: 'Kutu Kola', description: 'Soğuk kutu kola', price: 90 },
-    { name: 'Ice Tea', description: 'Çeşitli aromalı ice tea', price: 90 },
-    { name: 'Büyük Su', description: '1 lt su', price: 110 },
-    { name: 'Su', description: '0.5 lt su', price: 50 },
-    { name: 'Bitki Çayı', description: 'Çeşitli bitki çayları', price: 80 },
-    { name: 'Yeşil Çay', description: 'Taze demlenen yeşil çay', price: 250 },
-    { name: 'Çay', description: 'Geleneksel Türk çayı', price: 60 },
+    { name: 'Sıkma Meyve Suyu', description: 'Taze sıkılmış mevsim meyveleri', price: 225, image: drinkImage },
+    { name: 'Kutu Meyve Suyu', description: 'Çeşitli meyve suları', price: 45, image: drinkImage },
+    { name: 'Nesquik Süt', description: 'Çikolatalı süt', price: 45, image: drinkImage },
+    { name: 'Limonata', description: 'Ev yapımı taze limonata', price: 140, image: drinkImage },
+    { name: 'Ayran', description: 'Ev yapımı ayran', price: 90, image: drinkImage },
+    { name: 'Soda', description: 'Sade veya meyveli soda', price: 90, image: drinkImage },
+    { name: 'Kutu Kola', description: 'Soğuk kutu kola', price: 90, image: drinkImage },
+    { name: 'Ice Tea', description: 'Çeşitli aromalı ice tea', price: 90, image: drinkImage },
+    { name: 'Büyük Su', description: '1 lt su', price: 110, image: drinkImage },
+    { name: 'Su', description: '0.5 lt su', price: 50, image: drinkImage },
+    { name: 'Bitki Çayı', description: 'Çeşitli bitki çayları', price: 80, image: drinkImage },
+    { name: 'Yeşil Çay', description: 'Taze demlenen yeşil çay', price: 250, image: drinkImage },
+    { name: 'Çay', description: 'Geleneksel Türk çayı', price: 60, image: drinkImage },
   ],
   'cocktails': [
-    { name: 'Blue Ocean Mocktail', description: 'Alkolsüz mavi kokteyl', price: 195 },
-    { name: 'Hawaiian Mocktail', description: 'Tropikal meyveli alkolsüz kokteyl', price: 195 },
-    { name: 'Mandarin Mojito', description: 'Mandalinalı nane aromalı alkolsüz mojito', price: 195 },
-    { name: 'Mio Red Mocktail', description: 'Mio\'nun özel kırmızı alkolsüz kokteyli', price: 195 },
-    { name: 'Milkshake', description: 'Çeşitli aromalı milkshake', price: 195 },
+    { name: 'Blue Ocean Mocktail', description: 'Alkolsüz mavi kokteyl', price: 195, image: drinkImage },
+    { name: 'Hawaiian Mocktail', description: 'Tropikal meyveli alkolsüz kokteyl', price: 195, image: drinkImage },
+    { name: 'Mandarin Mojito', description: 'Mandalinalı nane aromalı alkolsüz mojito', price: 195, image: drinkImage },
+    { name: 'Mio Red Mocktail', description: 'Mio\'nun özel kırmızı alkolsüz kokteyli', price: 195, image: drinkImage },
+    { name: 'Milkshake', description: 'Çeşitli aromalı milkshake', price: 195, image: drinkImage },
   ],
   'coffee': [
-    { name: 'Americano', description: 'Sıcak servis edilen americano', price: 150 },
-    { name: 'Ice Americano', description: 'Soğuk servis edilen americano', price: 170 },
-    { name: 'Cappuccino', description: 'İtalyan usulü cappuccino', price: 160 },
-    { name: 'Cortado', description: 'Espresso ve az miktarda süt ile', price: 150 },
-    { name: 'Espresso', description: 'Tek shot espresso', price: 110 },
-    { name: 'Double Espresso', description: 'Çift shot espresso', price: 170 },
-    { name: 'Türk Kahvesi', description: 'Geleneksel Türk kahvesi', price: 100 },
-    { name: 'Double Türk Kahvesi', description: 'Çift Türk kahvesi', price: 150 },
-    { name: 'Filtre Kahve', description: 'Günlük demlenen filtre kahve', price: 140 },
-    { name: 'Flat White', description: 'Kremsi süt köpüğü ile espresso', price: 140 },
-    { name: 'Ice Latte', description: 'Soğuk servis edilen latte', price: 180 },
-    { name: 'Latte', description: 'Sıcak servis edilen latte', price: 150 },
-    { name: 'Macchiato', description: 'Espresso üzerine az miktarda süt köpüğü', price: 160 },
-    { name: 'Mocha', description: 'Çikolatalı espresso ve süt', price: 160 },
-    { name: 'Churchill', description: 'Özel karışım kahve', price: 130 },
+    { name: 'Americano', description: 'Sıcak servis edilen americano', price: 150, image: drinkImage },
+    { name: 'Ice Americano', description: 'Soğuk servis edilen americano', price: 170, image: drinkImage },
+    { name: 'Cappuccino', description: 'İtalyan usulü cappuccino', price: 160, image: drinkImage },
+    { name: 'Cortado', description: 'Espresso ve az miktarda süt ile', price: 150, image: drinkImage },
+    { name: 'Espresso', description: 'Tek shot espresso', price: 110, image: drinkImage },
+    { name: 'Double Espresso', description: 'Çift shot espresso', price: 170, image: drinkImage },
+    { name: 'Türk Kahvesi', description: 'Geleneksel Türk kahvesi', price: 100, image: drinkImage },
+    { name: 'Double Türk Kahvesi', description: 'Çift Türk kahvesi', price: 150, image: drinkImage },
+    { name: 'Filtre Kahve', description: 'Günlük demlenen filtre kahve', price: 140, image: drinkImage },
+    { name: 'Flat White', description: 'Kremsi süt köpüğü ile espresso', price: 140, image: drinkImage },
+    { name: 'Ice Latte', description: 'Soğuk servis edilen latte', price: 180, image: drinkImage },
+    { name: 'Latte', description: 'Sıcak servis edilen latte', price: 150, image: drinkImage },
+    { name: 'Macchiato', description: 'Espresso üzerine az miktarda süt köpüğü', price: 160, image: drinkImage },
+    { name: 'Mocha', description: 'Çikolatalı espresso ve süt', price: 160, image: drinkImage },
+    { name: 'Churchill', description: 'Özel karışım kahve', price: 130, image: drinkImage },
   ],
 };
 
@@ -149,14 +157,24 @@ export default function Menu() {
                   <motion.div
                     key={`${category.id}-${index}`}
                     variants={fadeInUp}
-                    className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
+                    className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
                   >
-                    <div className="flex justify-between items-start">
+                    <div className="aspect-square overflow-hidden bg-gray-100">
+                      <img
+                        src={item.image || defaultProductImage}
+                        alt={item.name}
+                        className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+                        onError={(e) => e.target.src = defaultProductImage}
+                      />
+                    </div>
+                    <div className="p-4">
                       <div className="space-y-2">
-                        <h3 className="text-lg font-medium text-gray-900">{item.name}</h3>
-                        <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
+                        <h3 className="text-lg font-medium text-gray-900 line-clamp-1">{item.name}</h3>
+                        <p className="text-sm text-gray-500 leading-relaxed line-clamp-2">{item.description}</p>
+                        <div className="pt-2">
+                          <span className="text-lg font-bold text-emerald-600">{item.price} ₺</span>
+                        </div>
                       </div>
-                      <span className="text-lg font-bold text-emerald-600 whitespace-nowrap">{item.price} ₺</span>
                     </div>
                   </motion.div>
                 ))}
@@ -169,21 +187,22 @@ export default function Menu() {
         <motion.nav
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-lg border-t border-gray-200 py-4 px-4 z-50"
+          className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-emerald-600 to-green-700 backdrop-blur-lg border-t-4 border-emerald-800 py-4 px-4 z-50 shadow-xl overflow-x-auto"
+          style={{ maxHeight: '100vh' }}
         >
           <div className="max-w-7xl mx-auto">
-            <div className="flex overflow-x-auto hide-scrollbar gap-3 justify-center">
+            <div className="flex gap-3 justify-start" style={{ scrollBehavior: 'smooth' }}>
               {categories.map((category) => (
                 <motion.button
                   key={category.id}
                   data-category={category.id}
                   onClick={() => scrollToCategory(category.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-full whitespace-nowrap transition-colors ${activeCategory === category.id ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-full whitespace-nowrap transition-colors text-sm border-2 border-black ${activeCategory === category.id ? 'bg-white text-emerald-700 shadow-lg' : 'bg-emerald-600/50 text-white hover:bg-white/20'}`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span>{category.emoji}</span>
-                  <span className="text-sm font-medium inline-block">{category.name}</span>
+                  <span className="text-xl">{category.emoji}</span>
+                  <span className="font-medium inline-block">{category.name}</span>
                 </motion.button>
               ))}
             </div>

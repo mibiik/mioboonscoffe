@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { navigationIcons, contactIcons } from './Icons';
 import { Link } from 'react-router-dom';
+import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -9,9 +10,9 @@ const fadeIn = {
 };
 
 const socialLinks = [
-  { name: 'Instagram', href: 'https://instagram.com/mioboons', icon: '📸' },
-  { name: 'Facebook', href: 'https://facebook.com/mioboons', icon: '👥' },
-  { name: 'Twitter', href: 'https://twitter.com/mioboons', icon: '🐦' },
+  { name: 'Instagram', href: 'https://instagram.com/mioboons', icon: FaInstagram },
+  { name: 'Facebook', href: 'https://facebook.com/mioboons', icon: FaFacebook },
+  { name: 'Twitter', href: 'https://twitter.com/mioboons', icon: FaTwitter },
 ];
 
 export default function Footer() {
@@ -33,7 +34,7 @@ export default function Footer() {
               whileTap={{ scale: 0.9 }}
             >
               <span className="sr-only">{item.name}</span>
-              {item.icon}
+              <item.icon />
             </motion.a>
           ))}
         </div>

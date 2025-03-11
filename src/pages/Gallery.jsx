@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
 
 // Import SVG images
 import birthdayPartySvg from '../assets/birthday_party.svg';
@@ -99,16 +100,28 @@ export default function Gallery() {
           </p>
           <div className="mt-6 flex justify-center gap-x-6">
             <a
-              href="#"
-              className="text-sm font-semibold leading-6 text-primary-600 hover:text-primary-500 transition-colors"
+              href="https://instagram.com/mioboons"
+              className="text-primary-600 hover:text-primary-500 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Instagram
+              <FaInstagram className="w-6 h-6" />
             </a>
             <a
-              href="#"
-              className="text-sm font-semibold leading-6 text-primary-600 hover:text-primary-500 transition-colors"
+              href="https://facebook.com/mioboons"
+              className="text-primary-600 hover:text-primary-500 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Facebook
+              <FaFacebook className="w-6 h-6" />
+            </a>
+            <a
+              href="https://twitter.com/mioboons"
+              className="text-primary-600 hover:text-primary-500 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTwitter className="w-6 h-6" />
             </a>
           </div>
         </motion.div>

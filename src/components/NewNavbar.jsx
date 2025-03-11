@@ -58,35 +58,33 @@ export default function NewNavbar() {
     <header 
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}
     >
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-2 sm:py-3">
+      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-6 py-1.5 sm:py-2">
         <motion.div 
-          className={`${isScrolled ? 'bg-white/95' : 'bg-white/90'} backdrop-blur-md rounded-2xl shadow-lg border border-gray-100/50 transition-all duration-300`}
+          className={`${isScrolled ? 'bg-white/95' : 'bg-white/90'} backdrop-blur-md rounded-xl shadow-lg border border-gray-100/50 transition-all duration-300`}
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: "spring", damping: 20, stiffness: 100 }}
         >
-          <div className="flex items-center justify-between px-4 py-2 sm:py-3">
-            {/* Logo Section - Removed text as requested */}
+          <div className="flex items-center justify-between px-3 py-1.5 sm:py-2">
             <Link to="/" className="flex-shrink-0 flex items-center">
               <motion.img 
                 src={logo} 
                 alt="Mio Boon's" 
-                className="h-8 w-auto sm:h-10 md:h-12 drop-shadow-lg" 
+                className="h-7 w-auto sm:h-8 md:h-10 drop-shadow-lg" 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               />
             </Link>
             
-            {/* Mobile menu button */}
             <div className="flex items-center lg:hidden">
               <motion.button
-                className="inline-flex items-center justify-center p-2 rounded-full text-gray-700 hover:text-primary-600 hover:bg-primary-50 focus:outline-none"
+                className="inline-flex items-center justify-center p-1.5 rounded-full text-gray-700 hover:text-primary-600 hover:bg-primary-50 focus:outline-none"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 <span className="sr-only">{mobileMenuOpen ? 'Close menu' : 'Open menu'}</span>
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   {mobileMenuOpen ? (
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   ) : (
@@ -96,9 +94,8 @@ export default function NewNavbar() {
               </motion.button>
             </div>
             
-            {/* Desktop navigation */}
             <div className="hidden lg:flex lg:items-center lg:justify-center lg:flex-1">
-              <ul className="flex space-x-1 md:space-x-2 lg:space-x-4">
+              <ul className="flex space-x-1 md:space-x-1.5 lg:space-x-2">
                 {navigation.map((item) => {
                   const isActive = location.pathname === item.href;
                   const isSpecial = item.name === 'Oyunlar' || item.name === 'Rezervasyon';
@@ -107,7 +104,7 @@ export default function NewNavbar() {
                     <motion.li key={item.name} className="relative">
                       <Link
                         to={item.href}
-                        className={`relative px-3 py-2 rounded-xl flex items-center gap-2 transition-all duration-300 ${isSpecial ? 'font-medium' : ''}`}
+                        className={`relative px-2 py-1.5 rounded-lg flex items-center gap-1.5 transition-all duration-300 ${isSpecial ? 'font-medium' : ''}`}
                       >
                         <motion.div
                           className={`absolute inset-0 rounded-xl ${isActive ? 
@@ -131,14 +128,14 @@ export default function NewNavbar() {
                               className={`${isActive ? 
                                 (item.name === 'Oyunlar' || item.name === 'Rezervasyon' ? 'text-white' : 'text-primary-600') : 
                                 item.name === 'Oyunlar' ? 'text-indigo-600' : 'text-gray-600'} 
-                                ${item.name === 'Oyunlar' ? 'h-6 w-6' : 'h-5 w-5'}`} 
+                                ${item.name === 'Oyunlar' ? 'h-5 w-5' : 'h-4 w-4'}`} 
                             />
                           </motion.div>
                         )}
                         
                         {/* Text label */}
                         <span 
-                          className={`relative z-10 text-sm font-medium ${isActive ? 
+                          className={`relative z-10 text-xs font-medium ${isActive ? 
                             (item.name === 'Oyunlar' || item.name === 'Rezervasyon' ? 'text-white' : 'text-primary-700') : 
                             'text-gray-700'}`}
                         >

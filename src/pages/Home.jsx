@@ -87,6 +87,13 @@ export default function Home() {
                 {React.createElement(actionIcons['Menüyü İncele'], { className: "h-5 w-5 sm:h-6 sm:w-6" })}
                 Menüyü İncele
               </Link>
+              <Link
+                to="/contact"
+                className="w-full sm:w-auto text-base sm:text-lg font-semibold leading-6 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-gray-500 to-gray-600 text-white shadow-xl hover:shadow-2xl transition-all inline-flex items-center justify-center gap-2 sm:gap-3 hover:scale-105 transform duration-300"
+              >
+                {React.createElement(actionIcons['İletişim'], { className: "h-5 w-5 sm:h-6 sm:w-6" })}
+                Bize Ulaşın
+              </Link>
             </div>
 
             {/* Main Heading */}

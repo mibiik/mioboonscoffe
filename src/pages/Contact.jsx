@@ -14,7 +14,7 @@ const contactInfo = [
   },
   {
     title: 'Telefon',
-    details: '+90 540 744 04 52',
+    details: '+90 541 744 04 52',
     icon: '📞'
   },
   {
@@ -46,35 +46,43 @@ export default function Contact() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="relative isolate bg-white py-12 sm:py-24"
+      className="relative isolate bg-white/90 py-24 sm:py-32"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <motion.h2
             variants={fadeIn}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900"
+            className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
           >
             İletişim
           </motion.h2>
           <motion.p
             variants={fadeIn}
-            className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 text-gray-600"
+            className="mt-6 text-lg leading-8 text-gray-600"
           >
             Bize ulaşmak için aşağıdaki iletişim bilgilerini kullanabilirsiniz.
           </motion.p>
+          <motion.button
+            variants={fadeIn}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="mt-8 w-full sm:w-auto px-6 py-3 text-base font-semibold text-gray-900 bg-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-md transition-all duration-200 flex items-center justify-center"
+          >
+            Bize Ulaşın
+          </motion.button>
         </div>
 
-        <div className="mx-auto mt-8 sm:mt-16 grid max-w-2xl grid-cols-1 gap-4 sm:gap-8 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4">
+        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4">
           {contactInfo.map((info) => (
             <motion.div
               key={info.title}
               variants={fadeIn}
-              className="relative flex flex-col gap-3 sm:gap-4 rounded-xl sm:rounded-2xl bg-gray-50 p-4 sm:p-6"
+              className="relative flex flex-col gap-4 rounded-2xl bg-gray-50 p-6"
             >
-              <div className="text-3xl sm:text-4xl">{info.icon}</div>
+              <div className="text-4xl">{info.icon}</div>
               <div>
                 <h3 className="font-semibold text-gray-900">{info.title}</h3>
-                <p className="mt-2 text-sm sm:text-base text-gray-600">{info.details}</p>
+                <p className="mt-2 text-gray-600">{info.details}</p>
               </div>
             </motion.div>
           ))}
@@ -82,7 +90,7 @@ export default function Contact() {
 
         <motion.div
           variants={fadeIn}
-          className="mx-auto mt-8 sm:mt-16 w-full rounded-xl overflow-hidden shadow-lg"
+          className="mx-auto mt-16 w-full rounded-xl overflow-hidden shadow-lg"
         >
           <iframe
             src={mapConfig.src}
