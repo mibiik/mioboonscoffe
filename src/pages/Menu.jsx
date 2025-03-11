@@ -32,7 +32,7 @@ const menuItems = {
     { name: 'Ginger Bread', description: 'Geleneksel zencefilli kurabiye', price: 75 },
     { name: 'Elmalı Kurabiye', description: 'Taze elma parçacıklı kurabiye', price: 55 },
     { name: 'Makaron', description: 'Fransız tarzı renkli makaron', price: 55 },
-    { name: 'Lüxlü Kurabiye', description: 'Özel malzemelerle hazırlanan lüks kurabiye', price: 35 },
+    { name: 'Tuzlu Kurabiye', description: 'Özel malzemelerle hazırlanan lüks kurabiye', price: 35 },
   ],
   'main-dishes': [
     { name: 'Çıtır Tavuk', description: 'Çıtır kaplamalı tavuk, yanında patates kızartması ile', price: 350 },
