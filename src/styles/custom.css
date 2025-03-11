@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Mega Brush';
+  src: url('https://fonts.cdnfonts.com/css/mega-brush') format('woff2');
+}
+
+.mega-brush-text {
+  font-family: 'Mega Brush', cursive;
+  font-size: 3.5rem;
+  background: linear-gradient(45deg, #e879f9, #818cf8, #f87171);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-effect {
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+}
+
+.glow-effect:hover {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+  transform: translateY(-1px);
+}

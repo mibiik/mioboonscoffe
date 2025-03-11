@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="none">
+  <!-- Cake -->
+  <rect x="70" y="80" width="60" height="40" rx="5" fill="#FF9FF3" stroke="#000" stroke-width="2"/>
+  <rect x="70" y="70" width="60" height="15" rx="3" fill="#FFC0CB" stroke="#000" stroke-width="2"/>
+  <rect x="70" y="60" width="60" height="15" rx="3" fill="#FFD700" stroke="#000" stroke-width="2"/>
+  
+  <!-- Candles -->
+  <rect x="80" y="45" width="5" height="15" fill="#1ABC9C" stroke="#000" stroke-width="1"/>
+  <rect x="100" y="40" width="5" height="20" fill="#3498DB" stroke="#000" stroke-width="1"/>
+  <rect x="115" y="45" width="5" height="15" fill="#9B59B6" stroke="#000" stroke-width="1"/>
+  
+  <!-- Flames -->
+  <circle cx="82.5" cy="42" r="3" fill="#F1C40F"/>
+  <circle cx="102.5" cy="37" r="3" fill="#F1C40F"/>
+  <circle cx="117.5" cy="42" r="3" fill="#F1C40F"/>
+  
+  <!-- Party hats -->
+  <path d="M50,100 L40,70 L60,70 Z" fill="#3498DB" stroke="#000" stroke-width="2"/>
+  <path d="M150,100 L140,70 L160,70 Z" fill="#FF5733" stroke="#000" stroke-width="2"/>
+  
+  <!-- Balloons -->
+  <circle cx="30" cy="40" r="15" fill="#FF5733" stroke="#000" stroke-width="2"/>
+  <circle cx="170" cy="40" r="15" fill="#3498DB" stroke="#000" stroke-width="2"/>
+  <path d="M30,55 L40,100" stroke="#000" stroke-width="2"/>
+  <path d="M170,55 L160,100" stroke="#000" stroke-width="2"/>
+  
+  <!-- Banner -->
+  <path d="M20,20 C40,10 60,30 80,20 C100,10 120,30 140,20 C160,10 180,30 200,20" stroke="#9B59B6" stroke-width="3" fill="none"/>
+</svg>

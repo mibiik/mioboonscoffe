@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="none">
+  <!-- Plate -->
+  <ellipse cx="100" cy="100" rx="70" ry="20" fill="#DFE6E9" stroke="#000" stroke-width="2"/>
+  
+  <!-- Coffee Cup -->
+  <path d="M40,70 L50,100 L70,100 L80,70 Z" fill="#A0522D" stroke="#000" stroke-width="2"/>
+  <ellipse cx="60" cy="70" rx="20" ry="5" fill="#DFE6E9" stroke="#000" stroke-width="1"/>
+  <ellipse cx="60" cy="100" rx="10" ry="3" fill="#A0522D" stroke="#000" stroke-width="1"/>
+  <path d="M80,80 Q90,85 80,90" stroke="#000" stroke-width="2" fill="none"/>
+  
+  <!-- Steam -->
+  <path d="M55,65 Q60,55 65,65" stroke="#B2BEC3" stroke-width="1" fill="none"/>
+  <path d="M60,60 Q65,50 70,60" stroke="#B2BEC3" stroke-width="1" fill="none"/>
+  
+  <!-- Pancakes -->
+  <ellipse cx="120" cy="85" rx="25" ry="8" fill="#FFEAA7" stroke="#000" stroke-width="1"/>
+  <ellipse cx="120" cy="80" rx="23" ry="7" fill="#FFEAA7" stroke="#000" stroke-width="1"/>
+  <ellipse cx="120" cy="75" rx="20" ry="6" fill="#FFEAA7" stroke="#000" stroke-width="1"/>
+  
+  <!-- Syrup -->
+  <path d="M120,65 Q125,70 130,75 Q135,80 120,85" fill="#E17055" stroke="#000" stroke-width="1"/>
+  
+  <!-- Butter -->
+  <rect x="115" y="65" width="10" height="5" rx="1" fill="#FDCB6E" stroke="#000" stroke-width="1"/>
+  
+  <!-- Fruits -->
+  <circle cx="90" cy="90" r="5" fill="#E74C3C" stroke="#000" stroke-width="1"/>
+  <circle cx="100" cy="85" r="5" fill="#E74C3C" stroke="#000" stroke-width="1"/>
+  <circle cx="145" cy="90" r="4" fill="#6C5CE7" stroke="#000" stroke-width="1"/>
+  <circle cx="155" cy="85" r="4" fill="#6C5CE7" stroke="#000" stroke-width="1"/>
+  <circle cx="150" cy="95" r="4" fill="#6C5CE7" stroke="#000" stroke-width="1"/>
+  
+  <!-- Knife and Fork -->
+  <rect x="30" y="110" width="20" height="3" rx="1" fill="#95A5A6" stroke="#000" stroke-width="1"/>
+  <rect x="35" y="105" width="2" height="10" rx="1" fill="#95A5A6" stroke="#000" stroke-width="1"/>
+  <path d="M160,105 L160,115 L165,115" stroke="#95A5A6" stroke-width="2" fill="none"/>
+  <path d="M170,105 L170,115" stroke="#95A5A6" stroke-width="2" fill="none"/>
+  <path d="M160,110 L170,110" stroke="#95A5A6" stroke-width="1" fill="none"/>
+</svg>

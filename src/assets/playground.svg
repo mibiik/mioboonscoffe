@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" fill="none">
+  <!-- Slide -->
+  <path d="M40,40 L60,90 L80,90 L60,40 Z" fill="#3498DB" stroke="#000" stroke-width="2"/>
+  <rect x="35" y="90" width="50" height="5" rx="2" fill="#2980B9" stroke="#000" stroke-width="1"/>
+  <rect x="40" y="35" width="20" height="5" rx="2" fill="#2980B9" stroke="#000" stroke-width="1"/>
+  
+  <!-- Swing -->
+  <line x1="100" y1="40" x2="100" y2="90" stroke="#000" stroke-width="2"/>
+  <line x1="120" y1="40" x2="120" y2="90" stroke="#000" stroke-width="2"/>
+  <line x1="100" y1="40" x2="120" y2="40" stroke="#000" stroke-width="2"/>
+  <rect x="105" y="70" width="10" height="15" rx="2" fill="#E74C3C" stroke="#000" stroke-width="1"/>
+  <line x1="107" y1="70" x2="107" y2="40" stroke="#000" stroke-width="1"/>
+  <line x1="113" y1="70" x2="113" y2="40" stroke="#000" stroke-width="1"/>
+  
+  <!-- Seesaw -->
+  <rect x="140" y="85" width="10" height="10" fill="#8E44AD" stroke="#000" stroke-width="1"/>
+  <rect x="142.5" y="80" width="5" height="5" fill="#8E44AD" stroke="#000" stroke-width="1"/>
+  <line x1="145" y1="80" x2="145" y2="60" stroke="#000" stroke-width="2"/>
+  <rect x="130" y="60" width="30" height="5" rx="2" fill="#9B59B6" stroke="#000" stroke-width="1" transform="rotate(-15 145 60)"/>
+  
+  <!-- Ground -->
+  <rect x="20" y="95" width="160" height="10" rx="5" fill="#27AE60" stroke="#000" stroke-width="1"/>
+  
+  <!-- Sun -->
+  <circle cx="170" cy="30" r="15" fill="#F1C40F" stroke="#F39C12" stroke-width="2"/>
+  <line x1="170" y1="10" x2="170" y2="5" stroke="#F39C12" stroke-width="2"/>
+  <line x1="170" y1="55" x2="170" y2="50" stroke="#F39C12" stroke-width="2"/>
+  <line x1="150" y1="30" x2="145" y2="30" stroke="#F39C12" stroke-width="2"/>
+  <line x1="195" y1="30" x2="190" y2="30" stroke="#F39C12" stroke-width="2"/>
+  <line x1="155" y1="15" x2="150" y2="10" stroke="#F39C12" stroke-width="2"/>
+  <line x1="190" y1="50" x2="185" y2="45" stroke="#F39C12" stroke-width="2"/>
+  <line x1="155" y1="45" x2="150" y2="50" stroke="#F39C12" stroke-width="2"/>
+  <line x1="190" y1="10" x2="185" y2="15" stroke="#F39C12" stroke-width="2"/>
+  
+  <!-- Clouds -->
+  <path d="M30,30 Q35,20 45,25 Q55,15 65,25 Q70,20 75,30 Q65,35 55,30 Q45,35 30,30 Z" fill="white" stroke="#BDC3C7" stroke-width="1"/>
+</svg>
