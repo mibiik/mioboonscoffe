@@ -2,10 +2,12 @@ import { Routes, Route, useLocation, Navigate, useNavigate } from 'react-router-
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { useAuth } from './contexts/AuthContext';
+import { Helmet } from 'react-helmet';
 import AdminLogin from './components/AdminLogin';
 import NewNavbar from './components/NewNavbar';
 import Footer from './components/Footer';
 import { navigationIcons } from './components/Icons';
+import logo from './assets/logo.svg';
 
 // Import pages
 import Home from './pages/Home';
@@ -42,6 +44,10 @@ function App() {
 
   return (
     <div className="bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 min-h-screen">
+      <Helmet>
+        <title>Mio Boon's</title>
+        <link rel="icon" href={logo} type="image/svg+xml" />
+      </Helmet>
       <NewNavbar />
       <div className="pt-16 sm:pt-20 md:pt-24 lg:pt-28">
         <AnimatePresence mode="wait">
