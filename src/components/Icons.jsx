@@ -84,5 +84,7 @@ export const actionIcons = {
   'Menüyü İncele': ClipboardDocumentListIcon,
   'Gönder': PaperAirplaneIcon,
   'arrow': ArrowRightIcon,
-  'chevron': ChevronRightIcon
+  'chevron': ChevronRightIcon,
+  'Oyunlar': GameControllerIcon,
+  'İletişim': EnvelopeIcon
 };

@@ -4,299 +4,142 @@ import { navigationIcons, actionIcons } from '../components/Icons';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 
-// Animation variants
-const fadeIn = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 }
-};
-
-const slideIn = {
-  initial: { opacity: 0, x: -30 },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: 30 }
-};
-
-const staggerContainer = {
-  initial: {},
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-// Quick action links
-const quickActions = [
-  { 
-    name: 'Menü', 
-    href: '/menu', 
-    description: 'Lezzetli yemekler ve içecekler', 
-    icon: navigationIcons['Menü'], 
-    color: 'from-primary-500 to-primary-600'
-  },
-  { 
-    name: 'Rezervasyon', 
-    href: '/reservation', 
-    description: 'Online rezervasyon yapın', 
-    icon: navigationIcons['Rezervasyon'], 
-    color: 'from-secondary-500 to-secondary-600'
-  },
-  { 
-    name: 'Doğum Günü', 
-    href: '/birthday', 
-    description: 'Özel günleriniz için organizasyon', 
-    icon: navigationIcons['Doğum Günü'], 
-    color: 'from-accent-500 to-accent-600'
-  },
-  { 
-    name: 'İletişim', 
-    href: '/contact', 
-    description: 'Bize ulaşın', 
-    icon: navigationIcons['İletişim'], 
-    color: 'from-tertiary-500 to-tertiary-600'
-  },
-];
-
-// Features section data
 const features = [
   {
-    title: 'Eğlence Dolu Anlar',
-    description: 'Çocuklarınız için özel tasarlanmış eğlence alanlarımızda unutulmaz anılar biriktirin.',
+    title: 'Eğlence Dünyası',
+    description: 'Çocuklarınız için özel tasarlanmış oyun alanlarında sınırsız eğlence ve macera.',
     icon: '🎮',
     color: 'bg-gradient-to-r from-purple-500 to-indigo-500'
   },
   {
-    title: 'Lezzetli Menüler',
-    description: 'Hem çocuklar hem de yetişkinler için özenle hazırlanmış lezzetli menülerimiz.',
+    title: 'Özel Lezzetler',
+    description: 'Taze malzemelerle hazırlanan, çocuk dostu özel menümüzle damak zevkinize hitap ediyoruz.',
     icon: '🍔',
     color: 'bg-gradient-to-r from-amber-500 to-orange-500'
   },
   {
-    title: 'Özel Organizasyonlar',
-    description: 'Doğum günleri ve özel etkinlikler için profesyonel organizasyon hizmetimiz.',
+    title: 'Unutulmaz Kutlamalar',
+    description: 'Doğum günleri ve özel etkinlikleriniz için profesyonel organizasyon ve süsleme hizmetleri.',
     icon: '🎂',
     color: 'bg-gradient-to-r from-pink-500 to-rose-500'
   },
 ];
 
+const quickActions = [
+  {
+    name: 'Rezervasyon',
+    description: 'Hemen masa rezervasyonu yapın',
+    href: '/reservation',
+    icon: actionIcons['Rezervasyon Yap'],
+    color: 'from-red-500 to-red-600'
+  },
+  {
+    name: 'Menü',
+    description: 'Lezzetli menümüzü inceleyin',
+    href: '/menu',
+    icon: actionIcons['Menüyü İncele'],
+    color: 'from-emerald-500 to-green-600'
+  },
+  {
+    name: 'Oyunlar',
+    description: 'Eğlenceli oyunlarımızı keşfedin',
+    href: '/games',
+    icon: actionIcons['Oyunlar'],
+    color: 'from-blue-500 to-indigo-600'
+  },
+  {
+    name: 'İletişim',
+    description: 'Bize ulaşın',
+    href: '/contact',
+    icon: actionIcons['İletişim'],
+    color: 'from-purple-500 to-pink-600'
+  }
+];
+
 export default function Home() {
-  const [scrollY, setScrollY] = useState(0);
-
-  // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      className="relative overflow-hidden"
-    >
-      {/* Hero Section with Animated Background */}
-      <div className="relative isolate overflow-hidden min-h-[90vh] flex items-center justify-center pt-16">
-        {/* Animated background */}
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-br from-primary-100 via-secondary-100 to-accent-100"
-            animate={{
-              background: [
-                'linear-gradient(to bottom right, #f5e9ff, #e6f9ff, #fff2e6)',
-                'linear-gradient(to bottom right, #fff2e6, #e6f9ff, #f5e9ff)',
-                'linear-gradient(to bottom right, #e6f9ff, #f5e9ff, #fff2e6)'
-              ],
-              scale: [1, 1.02, 1],
-            }}
-            transition={{ duration: 20, ease: 'linear', repeat: Infinity }}
-          />
-          
-          {/* Animated particles */}
-          <motion.div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(150, 40, 255, 0.15) 0%, transparent 50%)',
-              filter: 'blur(40px)'
-            }}
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-              x: [-20, 20, -20],
-              y: [-20, 20, -20]
-            }}
-            transition={{ duration: 8, ease: 'easeInOut', repeat: Infinity }}
-          />
-          
-          {/* Animated grid pattern */}
-          <motion.div
-            className="absolute inset-0"
-            style={{
-              background: 'repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 10px)',
-              backgroundSize: '30px 30px',
-              opacity: 0.5
-            }}
-            animate={{
-              backgroundPosition: ['0px 0px', '30px 30px', '0px 0px']
-            }}
-            transition={{ duration: 10, ease: 'linear', repeat: Infinity }}
-          />
-          
-          {/* Floating shapes */}
-          <div className="absolute inset-0 overflow-hidden">
-            {[...Array(6)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute rounded-full bg-white/10 backdrop-blur-md"
-                style={{
-                  width: `${Math.random() * 100 + 50}px`,
-                  height: `${Math.random() * 100 + 50}px`,
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  border: '1px solid rgba(255,255,255,0.2)'
-                }}
-                animate={{
-                  y: [0, Math.random() * 30 - 15, 0],
-                  x: [0, Math.random() * 30 - 15, 0],
-                  rotate: [0, Math.random() * 360, 0]
-                }}
-                transition={{
-                  duration: Math.random() * 10 + 10,
-                  repeat: Infinity,
-                  ease: 'easeInOut'
-                }}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-4 sm:py-6 lg:py-8 lg:px-8">
-          <div className="flex flex-col items-center text-center">
-            {/* Logo with enhanced animation */}
-            <motion.div
-              initial={{ opacity: 1, scale: 0.9, y: 0 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ 
-                duration: 0.8, 
-                type: "spring", 
-                bounce: 0.3 
-              }}
-              className="mb-8 relative"
-            >
-              <motion.div
-                className="absolute -inset-10 rounded-full bg-gradient-to-r from-primary-200/30 to-secondary-200/30 blur-xl"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  opacity: [0.5, 0.8, 0.5],
-                  rotate: [0, 5, 0]
-                }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              />
+    <div className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
+      <div className="min-h-screen flex items-center justify-center py-8 px-3 sm:py-16 sm:px-4 lg:py-24 lg:px-8">
+        <div className="w-full max-w-7xl">
+          <div className="text-center">
+            {/* Logo */}
+            <div className="mb-8 sm:mb-12">
               <img 
                 src={logo} 
                 alt="Mio Boon's" 
-                className="h-32 sm:h-40 md:h-48 lg:h-56 w-auto drop-shadow-2xl relative z-10" 
+                className="h-24 sm:h-32 md:h-40 lg:h-48 w-auto mx-auto drop-shadow-xl" 
               />
-            </motion.div>
+            </div>
 
-            {/* CTA Buttons with enhanced animation */}
-            <motion.div
-              initial={{ opacity: 1, y: 0 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col sm:flex-row items-center gap-5 mb-12"
-            >
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 mb-12 sm:mb-16 px-4 sm:px-0">
               <Link
                 to="/reservation"
-                className="w-full sm:w-auto rounded-full bg-gradient-to-r from-red-500 via-red-600 to-red-700 px-8 py-4 text-lg font-bold text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-3 relative overflow-hidden group animate-pulse"
+                className="w-full sm:w-auto rounded-full bg-gradient-to-r from-red-500 via-red-600 to-red-700 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2 sm:gap-3"
               >
-                {React.createElement(actionIcons['Rezervasyon Yap'], { className: "h-6 w-6" })}
+                {React.createElement(actionIcons['Rezervasyon Yap'], { className: "h-5 w-5 sm:h-6 sm:w-6" })}
                 Rezervasyon Yap
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"
-                  animate={{ x: ['100%', '-100%'] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                />
               </Link>
               <Link
                 to="/menu"
-                className="w-full sm:w-auto text-lg font-semibold leading-6 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 text-white shadow-xl hover:shadow-2xl transition-all inline-flex items-center justify-center gap-3 group relative overflow-hidden hover:scale-105 transform duration-300"
+                className="w-full sm:w-auto text-base sm:text-lg font-semibold leading-6 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-emerald-500 to-green-600 text-white shadow-xl hover:shadow-2xl transition-all inline-flex items-center justify-center gap-2 sm:gap-3 hover:scale-105 transform duration-300"
               >
-                {React.createElement(actionIcons['Menüyü İncele'], { className: "h-6 w-6" })}
+                {React.createElement(actionIcons['Menüyü İncele'], { className: "h-5 w-5 sm:h-6 sm:w-6" })}
                 Menüyü İncele
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent"
-                  animate={{ x: ['100%', '-100%'] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
               </Link>
-            </motion.div>
+            </div>
 
-            {/* Main heading with enhanced animation */}
-            <motion.h1
-              variants={fadeIn}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-gray-900 relative z-10 mb-6 font-serif"
-            >
-              <motion.span
-                className="inline-block w-full font-black bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-transparent bg-clip-text drop-shadow-xl"
-                style={{
-                  backgroundSize: '200% auto',
-                  textShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                }}
-                animate={{
-                  backgroundPosition: ['0% center', '200% center', '0% center'],
-                  scale: [1, 1.01, 1],
-                }}
-                transition={{ duration: 8, ease: 'easeInOut', repeat: Infinity }}
-              >
-                Mio Boon's ile Büyülü Anlar!
-              </motion.span>
-            </motion.h1>
+            {/* Main Heading */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 mb-4 sm:mb-6 font-serif px-4 sm:px-0">
+              <span className="inline-block bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-transparent bg-clip-text drop-shadow-xl">
+                Eğlence ve Lezzetin Buluşma Noktası
+              </span>
+            </h1>
             
-            {/* Subtitle with enhanced animation */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-4 text-xl md:text-2xl text-gray-600 max-w-3xl"
-            >
-              Eğlence ve lezzetin buluşma noktasında, her anı özel, her gülümseme değerli!
-            </motion.p>
+            {/* Subtitle */}
+            <p className="mt-3 sm:mt-4 text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-16 sm:mb-24 px-4 sm:px-0">
+              Çocuklarınızın güvenle eğlendiği, ailelerin keyifle vakit geçirdiği benzersiz bir mekan deneyimi
+            </p>
 
-            {/* Features Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-              className="mt-24 mb-12"
-            >
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 1.5 + index * 0.2 }}
-                    className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-                  >
-                    <div className={`w-16 h-16 ${feature.color} rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-lg`}>
-                      {feature.icon}
+            {/* Features Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto px-4">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                >
+                  <div className={`w-12 h-12 sm:w-16 sm:h-16 ${feature.color} rounded-2xl flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg mx-auto`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">{feature.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-600 text-center">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Quick Actions */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-12 sm:mt-16 px-4 sm:px-0">
+              {quickActions.map((action) => (
+                <Link
+                  key={action.name}
+                  to={action.href}
+                  className={`group relative overflow-hidden rounded-xl sm:rounded-2xl p-4 sm:p-6 ${action.name === 'Rezervasyon' ? 'glow-effect' : ''}`}
+                >
+                  <div className={`absolute inset-0 bg-gradient-to-r ${action.color} opacity-90`} />
+                  <div className="relative flex items-center gap-3 sm:gap-4">
+                    <action.icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
+                    <div>
+                      <h3 className="text-base sm:text-lg font-semibold text-white">{action.name}</h3>
+                      <p className="text-xs sm:text-sm text-white/90">{action.description}</p>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                    <p className="text-gray-600">{feature.description}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
