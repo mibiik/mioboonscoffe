@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation, Navigate, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import WhatsAppButton from './components/WhatsAppButton';
 import { useAuth } from './contexts/AuthContext';
 import { Helmet } from 'react-helmet';
 import AdminLogin from './components/AdminLogin';
@@ -65,6 +66,7 @@ function App() {
         </AnimatePresence>
       </div>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

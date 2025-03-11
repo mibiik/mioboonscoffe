@@ -166,9 +166,13 @@ export default function Menu() {
               transition={{ duration: 0.5 }}
               className="scroll-mt-24"
             >
-              <div className="flex items-center space-x-4 mb-8">
-                <span className="text-3xl">{category.emoji}</span>
-                <h2 className="text-2xl font-light text-gray-800">{category.name}</h2>
+              <div className="flex flex-col items-center space-y-4 mb-8 w-full">
+                <div className="w-full px-6 py-2 bg-gradient-to-r from-emerald-100 to-green-100 shadow-sm">
+                  <div className="flex items-center justify-center space-x-4 max-w-7xl mx-auto">
+                    <span className="text-4xl">{category.emoji}</span>
+                    <h2 className="text-3xl font-semibold text-gray-800">{category.name}</h2>
+                  </div>
+                </div>
               </div>
 
               <div className="flex flex-col space-y-4">
@@ -230,8 +234,8 @@ export default function Menu() {
           className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-emerald-600 to-green-700 backdrop-blur-lg border-t-4 border-emerald-800 py-4 px-4 z-50 shadow-xl overflow-x-auto"
           style={{ maxHeight: '100vh' }}
         >
-          <div className="max-w-7xl mx-auto">
-            <div className="flex gap-3 justify-start" style={{ scrollBehavior: 'smooth' }}>
+          <div className="max-w-7xl mx-auto flex justify-between items-center">
+            <div className="flex gap-3 justify-start flex-1" style={{ scrollBehavior: 'smooth' }}>
               {categories.map((category) => (
                 <motion.button
                   key={category.id}
