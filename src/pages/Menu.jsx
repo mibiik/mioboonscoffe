@@ -47,7 +47,7 @@ const menuItems = {
   'main-dishes': [
     { name: 'Çıtır Tavuk', description: 'Çıtır kaplamalı tavuk, yanında patates kızartması ile', price: 350, image: mainDishImage },
     { name: 'Çocuk Pizza', description: 'Çocuklar için özel hazırlanan mini pizza', price: 300, image: mainDishImage },
-    { name: 'Pizza', description: 'İtalyan usulü hazırlanan pizza', price: 475, image: mainDishImage },
+    { name: 'Pizza', description: 'İtalyan usulü hazırlanan pizza', price: 525, image: mainDishImage },
     { name: 'Hamburger', description: 'Ev yapımı hamburger, yanında patates kızartması ile', price: 475, image: mainDishImage },
     { name: 'Köfte Salata', description: 'Izgara köfte ile taze mevsim salatası', price: 470, image: mainDishImage },
     { name: 'Köfte Makarna', description: 'Izgara köfte ile makarna', price: 470, image: mainDishImage },
