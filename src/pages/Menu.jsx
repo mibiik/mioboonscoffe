@@ -52,6 +52,7 @@ const menuItems = {
     { name: 'Köfte Salata', description: 'Izgara köfte ile taze mevsim salatası', price: 470, image: mainDishImage },
     { name: 'Köfte Makarna', description: 'Izgara köfte ile makarna', price: 470, image: mainDishImage },
     { name: 'Mantı', description: 'El açması mantı, yoğurt ve sos ile', price: 475, image: mainDishImage },
+    { name: 'Çocuk Mantı', description: 'El açması mantı, yoğurt ve sos ile', price: 350, image: mainDishImage },
     { name: 'Schnitzel Salata', description: 'Tavuk schnitzel ile taze mevsim salatası', price: 425, image: mainDishImage },
     { name: 'Soslu Makarna', description: 'Seçiminize göre pesto veya domates soslu makarna', price: 350, image: mainDishImage },
     { name: 'Falafel Salata', description: 'Nohut köftesi ile taze mevsim salatası', price: 350, image: mainDishImage },
