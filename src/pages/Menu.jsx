@@ -35,7 +35,7 @@ const menuItems = {
     { name: 'Cookie Brownie', description: 'Çikolata parçacıklı cookie brownie', price: 225, image: defaultProductImage },
     { name: 'Cup Cake', description: 'Günlük taze hazırlanan cup cake', price: 130, image: defaultProductImage },
     { name: 'Islak Kek', description: 'Çikolata soslu ıslak kek', price: 150, image: defaultProductImage },
-    { name: 'Cheesecake', description: 'Kremsi ve lezzetli cheesecake', price: 220, image: defaultProductImage },
+    { name: 'Cheesecake', description: 'Lezzetli cheesecake', price: 220, image: defaultProductImage },
     { name: 'Brownie', description: 'Sıcak servis edilen çikolatalı brownie', price: 175, image: brownieImage },
     { name: 'Starbucks Kurabiye', description: 'Starbucks tarzı özel kurabiye', price: 140, image: defaultProductImage },
     { name: 'Kutu Kurabiye', description: 'Çeşitli kurabiyelerden oluşan kutu', price: 225, image: defaultProductImage },
@@ -97,8 +97,8 @@ const menuItems = {
     { name: 'Ice Latte', description: 'Soğuk servis edilen latte', price: 180, image: drinkImage },
     { name: 'Latte', description: 'Sıcak servis edilen latte', price: 150, image: drinkImage },
     { name: 'Macchiato', description: 'Espresso üzerine az miktarda süt köpüğü', price: 160, image: drinkImage },
-    { name: 'Mocha', description: 'Çikolatalı espresso ve süt', price: 160, image: drinkImage },
-    { name: 'Churchill', description: 'Özel karışım kahve', price: 130, image: drinkImage },
+    { name: 'Mocha', description: 'Espresso,süt ve çikolata şurup', price: 160, image: drinkImage },
+    { name: 'Churchill', description: 'Soda,limon,tuz', price: 130, image: drinkImage },
   ],
 };
 
